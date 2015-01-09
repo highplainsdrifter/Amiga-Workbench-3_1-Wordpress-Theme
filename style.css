@@ -1,0 +1,664 @@
+/*   
+Theme Name: Amiga Workbench
+Theme URI: http://www.mattdrew.co.uk
+Description: Amiga Workbench Theme with working Clock
+Author: Matt Drew
+Author URI: http://www.mattdrew.co.uk
+Version: Beta 1.0
+*/
+
+@media screen {
+
+* { margin: 0; padding: 0; }
+body { background: white; font: 14px/1.4 Georgia, Serif; }
+.screen-reader-text { position: absolute; left: -9999px; top: -9999px; }
+.clear { clear: both; }
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .group, *:first-child+html .group { zoom: 1; } /* First selector = IE6, Second Selector = IE 7 */
+
+@font-face {
+  font-family: 'Amiga Forever Pro2';
+  src: url('fonts/amiga4ever pro2.eot');
+  src: url('fonts/amiga4ever pro2.eot?#iefix') format('embedded-opentype'),
+       url('fonts/amiga4ever pro2.woff') format('woff'),
+       url('fonts/amiga4ever pro2.ttf') format('truetype'),
+       url('fonts/amiga4ever pro2.svg#AmigaForever') format('svg');
+}
+html {
+	-webkit-text-size-adjust: none;
+}
+
+body {
+  font-family: 'Amiga Forever Pro2';
+  margin-top: 100px;
+  margin-left: 200px;
+  background-color: #aaaaaa;
+}
+#page-wrap { 
+  position: relative; 
+  margin-bottom: 200px;
+}
+h1, h2, h3 { font-weight: normal; margin: 0 0 10px 0; }
+h1 { }
+h2 { 
+  font-size: 17px;
+}
+h3 { }
+
+p { margin: 0 0 10px 0; }
+a { }
+a:hover { } 
+
+blockquote { }
+blockquote p { }
+
+ul, ol { margin: 0 0 10px 0; }
+
+.post ol {
+  margin-left: 45px;
+}
+.post ul {
+  margin-left: 15px;
+}
+
+/*main menu*/
+.menu-main-menu-container ul {
+  list-style: none;
+  top: 30px;
+  position: fixed;
+  top: 60px;
+  margin-left: 0px;
+  width: 160px;
+}
+.menu-main-menu-container li {
+  position: relative;
+  margin-right: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.menu-main-menu-container li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding-top: 60px;
+  margin-bottom: -10px;
+}
+.menu-main-menu-container li:before {
+  width: 100%;
+  display: block;
+  content: "";
+  background-image: url('images/amiga_disk.png');
+  background-size: 66px 60px;
+  background-repeat :no-repeat;
+  background-position :center;
+  text-align: center;
+  height: 67px;
+  text-align: center;
+  margin-bottom: -60px;
+}
+.menu-main-menu-container li:hover:before {
+  background-image: url('images/amiga_disk_hover.png');
+}
+.menu-main-menu-container li:last-child:before {
+  background-image: url('images/amiga_drive.png');
+  background-size: 128px 58px;
+  width: 100%;
+}
+.menu-main-menu-container li:last-child:hover:before {
+  background-image: url('images/amiga_drive_hover.png');
+}
+
+
+/*--------Responsive Menu------*/
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+#ex-burger label { 
+  position: fixed;
+  left: 10px;
+  top: 7px;
+  width: 30px;
+  height: 30px;
+  z-index: 5000;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #d9d9d9;
+  display: none;
+  border-right: 2px solid #000;
+  border-top: 2px solid #FFF;
+  border-left: 2px solid #FFF;
+  border-bottom: 2px solid #000;
+}
+#ex-burger label:before, #ex-burger label:after {
+  display: block;
+  content: " ";
+  width: 24px;
+  height: 6px;
+  margin-left: 3px;
+  border-top: 3px solid #333;
+  border-bottom: 3px solid #333;
+}
+#ex-burger label:before { 
+  margin-top: 5px;
+}
+#ex-burger label:after { 
+  display: block;
+  content: " ";
+  border-top: 0px;
+}
+input[type=checkbox]:checked ~ .menu-main-menu-container ul {/*This is the key to activating the menu*/
+  display: block;
+}
+#ex-burger label:hover { 
+border-right: 2px solid #FFF;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #FFF;
+}
+
+
+
+
+
+
+
+
+
+#header {
+  background-color: #fff;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000; 
+  padding: 0;
+  padding-top: 5px;
+  padding-left: 0px;
+  margin-left: -200px;
+  z-index: 1000;
+  background-image:  url('images/amiga_window_icon.png');
+  background-size: 34px 25px;
+  background-repeat :no-repeat;
+  background-position : bottom right;
+}
+#header h1 a{
+  position: relative;
+  font-size: 15px;
+  text-decoration: none;
+  color: #000;
+  padding: 0px;
+  margin: 0px;
+  margin-right: 10px;
+  float: left;
+  padding-left: 10px;
+  
+}
+.description {
+  position: relative;
+ font-size: 15px;
+  float: left;
+  text-decoration: none;
+  color: #000;
+  padding: 0px;
+  margin-top: -10px;
+
+}
+#searchform {
+  position: relative;
+  float: left;
+  padding-bottom: 10px;
+}
+
+#searchform #s {
+  width: 100px;
+  margin-bottom: 10px;
+  
+}
+
+input[type="submit"] {
+  font-family: 'Amiga Forever Pro2';
+  font-size: 12px;
+  background-color: #aaaaaa;
+  padding: 3px;
+}
+textarea {
+  font-family: 'Amiga Forever Pro2';
+  background-color: #aaaaaa;
+  border-right: 2px solid #FFF;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #FFF; 
+  outline: none;
+  padding: 5px;
+  width: 400px;
+}
+
+
+.page.type-page.status-publish.hentry {
+  max-width: 700px;
+  margin-right: 300px;
+}
+
+
+/* --------------------Start of box decoration------------------*/
+/* -------Post--------*/
+/* -------Sidebar--------*/
+/* -------Clock--------*/
+
+.post, #sidebar, #clock_wrapper {
+	background-color: #aaaaaa;
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    border-left: 2px solid #FFF;
+    border-bottom: 2px solid #000;
+    background-image:  url('images/amiga_post_edge_right.png'), url('images/amiga_post_edge_left.png');
+    background-size: 6px 100%, 4px 100%;
+    background-repeat :no-repeat;
+    background-position :right, left;
+}
+.post:before, .post:after, #sidebar:before, #sidebar:after, #clock_wrapper:before, #clock_wrapper:after {
+  display: block;
+  border-right: 2px solid #000;
+  border-top: 2px solid #FFF;
+  border-left: 2px solid #FFF;
+  position: relative; 
+  content: "";
+  height: 24px;
+  padding: 0px;
+  background-color: #6688bb;
+  margin-left: -22px;
+  margin-right: -22px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+  background-image:  url('images/amiga_post_toggle.png'), url('images/amiga_post_toggle_top_left.png');
+  background-size: 70px 24px, 28px 24px;
+  background-repeat :no-repeat;
+  background-position :right, left; 
+  z-index: -2;
+  margin-top: -27px;
+  
+}
+.post:after, #sidebar:after, #clock_wrapper:after, #clock_wrapper:after {
+  height: 20px;
+  margin-bottom: -40px;
+  border-bottom: 2px solid #666;
+  border-top: 4px solid #dfe5ec;
+  background-image: url('images/amiga_post_toggle_bottom.png');
+  background-size: 26px 20px;
+  margin-top: 50px;
+  z-index: 4;
+}		
+/* --------------------End of box decoration------------------*/
+
+
+
+
+/* --------------------Start Post------------------*/
+.post {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  max-width: 700px;
+  margin-top: 100px;
+  margin-right: 300px;
+}
+.post-h, .post-h a {
+  font-size: 14px;
+  padding-bottom: 20px;
+  margin-top: -42px;
+  padding-left: 20px;
+  padding-right: 100px;
+}
+.post-h a {
+  padding-left: 0px;
+}
+
+/* --------------------End Post------------------*/
+
+
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+  background-color: #fff;
+  height: 24px;
+  border-top: 2px solid #000;
+  z-index: 100;
+  margin-left: -200px;
+  line-height: 25px;
+}
+#respond {
+  max-width: 700px;
+  margin-top: 50px;
+}
+
+.entry { }
+.entry a { }
+.entry a:hover { }
+
+.entry img {
+  padding: 10px;
+}
+
+pre { }
+code, tt { }
+
+.meta {
+  margin-bottom: 20px;
+}
+
+#meta { }
+.postmetadata { }
+
+/* --------------------Start Sidebar------------------*/
+
+#sidebar { 
+  position: absolute;
+  width: 200px;
+  height: auto;
+  right: 40px;
+  top: -20px;
+  padding: 20px;
+  z-index: 10;  
+}
+#sidebar ul{ 
+list-style: none;
+padding: 0px;
+margin: 0px;
+}
+
+/* --------------------End Post------------------*/
+
+.navgation { }
+   .next-posts { }
+   .prev-posts { }
+
+#searchform { }
+	#s { }
+	#searchsubmt {}
+
+#comments {
+  margin-top: 40px;
+  
+}
+.commentlist {
+  max-width: 745px;
+  margin-right: 300px;
+  
+}
+	
+ol.commentlist { 
+  list-style: none;
+  
+   
+}
+ol.commentlist li { }
+ol.commentlist li.alt { }
+ol.commentlist li.bypostauthor { }
+ol.commentlist li.byuser {background-color: green; }
+ol.commentlist li.comment-author-admin { }
+ol.commentlist li.comment { border-bottom: 1px dotted #666; padding: 10px; }
+ol.commentlist li.comment div.comment-author { }
+ol.commentlist li.comment div.vcard { }
+ol.commentlist li.comment div.vcard cite.fn { font-style: normal; }
+ol.commentlist li.comment div.vcard cite.fn a.url { }
+ol.commentlist li.comment div.vcard img.avatar { float:right; margin: 0 0 10px 10px; }
+ol.commentlist li.comment div.vcard img.avatar-32 { }
+ol.commentlist li.comment div.vcard img.photo { }
+ol.commentlist li.comment div.vcard span.says { }
+ol.commentlist li.comment div.commentmetadata { }
+ol.commentlist li.comment div.comment-meta { font-size: 10px; }
+ol.commentlist li.comment div.comment-meta a { color: #ccc; }
+ol.commentlist li.comment p { }
+ol.commentlist li.comment ul { }
+ol.commentlist li.comment div.reply { font-size: 11px; }
+ol.commentlist li.comment div.reply a { font-weight: bold; }
+ol.commentlist li.comment ul.children { list-style: none; margin: 10px 0 0; }
+ol.commentlist li.comment ul.children li { }
+ol.commentlist li.comment ul.children li.alt { }
+ol.commentlist li.comment ul.children li.bypostauthor { }
+ol.commentlist li.comment ul.children li.byuser { }
+ol.commentlist li.comment ul.children li.comment { }
+ol.commentlist li.comment ul.children li.comment-author-admin { }
+ol.commentlist li.comment ul.children li.depth-2 { border-left: 5px solid #555; margin: 0 0 10px 10px; }
+ol.commentlist li.comment ul.children li.depth-3 { border-left: 5px solid #999; margin: 0 0 10px 10px; }
+ol.commentlist li.comment ul.children li.depth-4 { border-left: 5px solid #bbb; margin: 0 0 10px 10px; }
+ol.commentlist li.comment ul.children li.depth-5 { }
+ol.commentlist li.comment ul.children li.odd { }
+
+ol.commentlist li.even { 
+  background-color: #aaaaaa;
+  border-right: 2px solid #FFF;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #FFF;
+  margin-bottom: 10px; 
+}
+ol.commentlist li.odd { 
+  background-color: #aaaaaa;
+  border-right: 2px solid #FFF;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #FFF; 
+  margin-bottom: 10px; 
+}
+
+ol.commentlist li.parent { border-left: 5px solid #111; }
+ol.commentlist li.thread-alt { }
+ol.commentlist li.thread-even { }
+ol.commentlist li.thread-odd { }
+
+form { 
+  font-family: 'Amiga Forever Pro2';
+  font-size: 13px;
+}
+input[type=text] {
+	
+	font-family: 'Amiga Forever Pro2';
+	font-size: 12px;
+	background-color: #aaaaaa;
+	border-right: 2px solid #FFF;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #FFF;
+  padding: 5px;
+}
+textarea { }
+
+
+} /* END screen media */
+
+
+@media print {
+
+.do-not-print { display: none; }
+#comments { page-break-before: always; }
+
+body { width: 100% !important; margin: 0 !important; padding: 0 !important; line-height: 1.4; word-spacing: 1.1pt; letter-spacing: 0.2pt; font-family: Garamond,"Times New Roman", serif; color: #000; background: none; font-size: 12pt; }
+h1,h2,h3,h4,h5,h6 { font-family: Helvetica, Arial, sans-serif; }
+h1 { font-size: 19pt; }
+h2 { font-size:17pt; }
+h3 { font-size:15pt; }
+h4,h5,h6 { font-size:12pt; }
+code { font: 10pt Courier, monospace; } 
+blockquote { margin: 1.3em; padding: 1em; }
+img { display: block; margin: 1em 0; }
+a img { border: none; }
+table { margin: 1px; text-align:left; }
+th { border-bottom: 1px solid #333;  font-weight: bold; }
+td { border-bottom: 1px solid #333; }
+th, td { padding: 4px 10px 4px 0; }
+caption { background: #fff; margin-bottom: 2em; text-align: left; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; } 
+a { text-decoration: none; color: black; }
+	
+} /* END print media */
+
+/* CLOCK */
+#clock_wrapper{
+  width: 170px;
+  height: 200px;
+  position: relavive;
+  z-index: 5;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+#clock_wrapper p{ /*Clock face*/
+	margin-top: -40px;
+	padding-left: 20px;
+}
+.clock { /*Clock face*/
+  background-image: url('images/clock_face.png');
+  width: 210px;
+  height: 254px;
+  position: relative;
+  margin-left: -20px;
+  margin-top: -37px;
+  margin-bottom: -78px;
+}
+
+.clock span { /*Group hand style*/
+  display: block;
+  position: absolute;
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+  left: 50%;
+  bottom: 50%;
+}
+.clock .minutes { /*Hour hand*/
+  background-image: url('images/clock_hour.png');
+  height: 76px;
+  width: 12px;
+  margin-left: -4px;
+}
+.clock .hours { /*Minute hand*/
+  background-image: url('images/clock_min.png');
+  height: 52px;
+  width: 12px;
+  margin-left: -4px;
+}
+.clock .seconds { /*Seconds hand*/
+  background-image: url('images/clock_second.png');
+  height: 77px;
+  width: 2px;
+  margin-left: 0px;
+}
+
+/* --------------------@media------------------*/
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (max-width : 900px) {
+  body, #footer, #header {
+	  margin-left: 0px;
+  }
+  body{
+	  margin-top: 0px;
+  }
+  .post, #respond, #comments, #sidebar, #clock_wrapper {
+	  margin-left: 10px;
+	  margin-right:10px;
+  }
+
+  #sidebar {
+	  height: auto;
+	  width: 255px;
+	  position: relative;
+	  float: left;
+	  right: 0px;
+	  left: 0px;
+	  top: 0px;
+	  margin-right: 300px;
+	  margin-top: 50px;
+	  margin-bottom: 100px;
+	  float: left;
+	 
+  }
+  textarea, #respond {
+	  width: 95%;
+  }
+  #header {
+	 position: fixed;
+	 top: 0px;
+	 width: 100%;
+     height: 40px;
+	 margin: 0px;
+  }
+  #header h1 a{
+  padding-left: 50px;
+  padding-top: 10px;
+  
+}
+  .description {
+	  display: none;
+  }
+  #clock_wrapper{
+	  position: relative;
+	  right: 0px;
+	  bottom: 0px;
+  }
+  .post {
+	 margin-top: 80px;
+	 position: relative; 
+  }
+  .post-h, .post-h a {
+   padding: 0px;	  
+   margin-top: 0px;
+  
+}
+  #ex-burger label { 
+  display: block;
+}
+  .menu-main-menu-container ul {
+	  position: fixed;
+	  top: 0px;
+	  margin: 0px;
+	  padding: 0px;
+	  background-color: #aaaaaa;
+	  border-bottom: 2px solid #000;
+	  width: 100%;
+	  display: none;
+	  padding-top: 40px;
+  }
+  .menu-main-menu-container li a {
+  padding: 0px;
+  width: 100%;
+  border-right: 2px solid #000;
+  border-top: 2px solid #FFF;
+  border-left: 2px solid #FFF;
+  border-bottom: 2px solid #000;
+}
+.menu-main-menu-container li a:hover {
+  border-right: 2px solid #FFF;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #FFF;
+}
+  .menu-main-menu-container li:before {
+  background-image: url('');
+
+}
+.menu-main-menu-container li:hover:before {
+  background-image: url('');
+
+}
+.menu-main-menu-container li:last-child {
+  padding-bottom: 30px;
+}
+.menu-main-menu-container li:last-child:before {
+  background-image: url('');
+}
+.menu-main-menu-container li:last-child:hover:before {
+  background-image: url('');
+}
+}
